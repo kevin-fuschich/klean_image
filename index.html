@@ -1,554 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Klean Image Landscaping</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klean Image Landscaping</title>
 
-  <style>
-    :root {
-      --green: #0f5f3a;
-      --green-dark: #083b25;
-      --green-light: #e8f3ec;
-      --gold: #c8a24a;
-      --ink: #1f2523;
-      --muted: #66706b;
-      --white: #ffffff;
-      --line: #dfe7e2;
-    }
+<style>
+:root{
+  --green:#0f5f3a;
+  --dark:#083b25;
+  --gold:#c8a24a;
+  --light:#e8f3ec;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  color:#222;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.6;
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 6%;
+  border-bottom:1px solid #eee;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+.logo{
+  height:70px;
+}
 
-    .top-bar {
-      background: var(--green-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 15px;
-      font-weight: 700;
-    }
+nav a{
+  margin-left:20px;
+  font-weight:bold;
+  text-decoration:none;
+  color:#222;
+}
 
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+.hero{
+  background:linear-gradient(rgba(8,59,37,.7), rgba(8,59,37,.7));
+  color:white;
+  padding:80px 6%;
+  text-align:center;
+}
 
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-    }
+.hero img{
+  height:110px;
+  background:white;
+  padding:10px;
+  border-radius:6px;
+  margin-bottom:20px;
+}
 
-    .logo-img {
-      height: 68px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
 
-    nav {
-      display: flex;
-      gap: 22px;
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--ink);
-      flex-wrap: wrap;
-    }
+.hero p{
+  font-size:20px;
+  margin-bottom:20px;
+}
 
-    nav a:hover {
-      color: var(--green);
-    }
+.btn{
+  padding:14px 22px;
+  background:var(--gold);
+  color:#083b25;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:4px;
+  display:inline-block;
+}
 
-    .hero {
-      min-height: 560px;
-      background:
-        linear-gradient(rgba(8, 59, 37, 0.68), rgba(8, 59, 37, 0.68)),
-        url("images/landscaping-hero.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 78px 6%;
-      color: var(--white);
-    }
+.contact-bar{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
 
-    .hero-content {
-      max-width: 720px;
-    }
+.section{
+  padding:60px 6%;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
 
-    .hero-logo {
-      height: 110px;
-      width: auto;
-      background: rgba(255,255,255,0.94);
-      padding: 14px 18px;
-      border-radius: 8px;
-      margin-bottom: 26px;
-      display: block;
-    }
+form{
+  background:white;
+  padding:30px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
 
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
+input, textarea, select{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:4px;
+}
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 0.98;
-      margin-bottom: 22px;
-    }
+button{
+  width:100%;
+  padding:15px;
+  background:var(--green);
+  color:white;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .hero p {
-      font-size: 21px;
-      max-width: 620px;
-      margin-bottom: 32px;
-    }
-
-    .button-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 4px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--green-dark);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
-    }
-
-    .contact-strip {
-      background: var(--green);
-      color: var(--white);
-      padding: 28px 6%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-
-    .contact-strip strong {
-      display: block;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .section {
-      padding: 72px 6%;
-    }
-
-    .section-intro {
-      max-width: 850px;
-      margin: 0 auto 44px;
-      text-align: center;
-    }
-
-    .section-intro h2 {
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1.08;
-      color: var(--green-dark);
-      margin-bottom: 16px;
-    }
-
-    .section-intro p {
-      font-size: 19px;
-      color: var(--muted);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      padding: 32px;
-      background: var(--white);
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      color: var(--green);
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-
-    .split-text h2 {
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.08;
-      color: var(--green-dark);
-      margin-bottom: 18px;
-    }
-
-    .split-text p {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-
-    .image-placeholder {
-      min-height: 360px;
-      background:
-        linear-gradient(rgba(15, 95, 58, 0.15), rgba(15, 95, 58, 0.15)),
-        url("images/work-sample.jpg");
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-    }
-
-    .lead-section {
-      background: var(--green-light);
-    }
-
-    form {
-      max-width: 760px;
-      margin: 0 auto;
-      background: var(--white);
-      padding: 36px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    label {
-      display: block;
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: var(--green-dark);
-      font-size: 14px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #cfd8d2;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .full {
-      grid-column: 1 / -1;
-    }
-
-    .submit-btn {
-      background: var(--green);
-      color: var(--white);
-      border: none;
-      padding: 16px 24px;
-      font-size: 15px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 18px;
-    }
-
-    .submit-btn:hover {
-      background: var(--green-dark);
-    }
-
-    footer {
-      background: var(--green-dark);
-      color: var(--white);
-      padding: 42px 6%;
-      text-align: center;
-    }
-
-    .footer-logo-img {
-      height: 82px;
-      width: auto;
-      background: white;
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin-bottom: 16px;
-    }
-
-    footer p {
-      color: #cdd8d2;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 850px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .contact-strip,
-      .cards,
-      .split,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 500px;
-        text-align: center;
-        justify-content: center;
-      }
-
-      .hero-logo {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-        height: auto;
-      }
-
-      .button-row {
-        justify-content: center;
-      }
-
-      .logo-img {
-        height: 58px;
-      }
-    }
-  </style>
+footer{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="top-bar">
-    Call Today for a Free Estimate: <a href="tel:3365551234">(336) 555-1234</a>
-  </div>
+<header>
+  <img src="klean_image_logo.jpg" class="logo">
+  <nav>
+    <a href="#estimate">Free Estimate</a>
+    <a href="tel:3365551234">Call</a>
+  </nav>
+</header>
 
-  <header>
-    <a href="#" class="logo-wrap">
-      <img src="klean_image_logo.jpg" alt="Klean Image Landscaping Logo" class="logo-img">
-    </a>
+<section class="hero">
+  <img src="klean_image_logo.jpg">
+  <h1>Clean Work. Clear Standards.</h1>
+  <p>Reliable landscaping for homes and businesses.</p>
+  <a href="#estimate" class="btn">Request Estimate</a>
+</section>
 
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#estimate">Free Estimate</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<div class="contact-bar">
+  Call Now: <a href="tel:3365551234" style="color:white;">(336) 555-1234</a>
+</div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <img src="klean_image_logo.jpg" alt="Klean Image Landscaping Logo" class="hero-logo">
+<section class="section">
+  <h2>Services</h2>
+  <p>Lawn care, landscaping, cleanups, and commercial property maintenance.</p>
+</section>
 
-      <div class="eyebrow">Residential & Commercial Landscaping</div>
-      <h1>Clean Work. Clear Standards.</h1>
-      <p>
-        Klean Image provides reliable, high-quality landscaping services for homes and businesses that expect their property to look sharp, clean, and well cared for.
-      </p>
+<section class="section" id="estimate">
+  <h2>Request a Free Estimate</h2>
 
-      <div class="button-row">
-        <a href="#estimate" class="btn btn-primary">Request an Estimate</a>
-        <a href="tel:3365551234" class="btn btn-secondary">Call Now</a>
-      </div>
-    </div>
-  </section>
+  <!-- ✅ WORKING FORM -->
+  <form action="https://formspree.io/f/mwvagnpz" method="POST">
 
-  <section class="contact-strip" id="contact">
-    <div>
-      <strong>Phone</strong>
-      <a href="tel:3365551234">(336) 555-1234</a>
-    </div>
+    <input type="hidden" name="_subject" value="New Klean Image Estimate Request">
 
-    <div>
-      <strong>Email</strong>
-      <a href="mailto:info@kleanimagelandscaping.com">info@kleanimagelandscaping.com</a>
-    </div>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email">
 
-    <div>
-      <strong>Service Area</strong>
-      Winston-Salem, NC & Surrounding Areas
-    </div>
-  </section>
+    <select name="service">
+      <option value="">Service Needed</option>
+      <option>Lawn Maintenance</option>
+      <option>Landscaping</option>
+      <option>Cleanup</option>
+      <option>Commercial</option>
+    </select>
 
-  <section class="section" id="services">
-    <div class="section-intro">
-      <h2>Landscaping services for homes, businesses, and properties that need to look right.</h2>
-      <p>
-        From routine maintenance to cleanups and landscape improvements, Klean Image brings dependable service and attention to detail to every job.
-      </p>
-    </div>
+    <textarea name="message" placeholder="Tell us about your project"></textarea>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Lawn Maintenance</h3>
-        <p>Mowing, trimming, edging, cleanup, and regular care to keep your property looking clean and consistent.</p>
-      </div>
+    <button type="submit">Submit Request</button>
 
-      <div class="card">
-        <h3>Landscape Services</h3>
-        <p>Planting, mulch, bed maintenance, seasonal refreshes, and detail work that improves curb appeal.</p>
-      </div>
+  </form>
+</section>
 
-      <div class="card">
-        <h3>Commercial Properties</h3>
-        <p>Reliable landscaping support for businesses, offices, churches, rental properties, and managed spaces.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="split">
-      <div class="split-text">
-        <h2>Family-owned. Hands-on. Built on doing the work right.</h2>
-        <p>
-          Klean Image is a family-owned landscaping business serving residential and commercial customers with pride, consistency, and care.
-        </p>
-        <p>
-          The company was built from a simple idea: when you take care of someone’s property, the finished work should speak for itself.
-        </p>
-        <p>
-          Whether it’s a home lawn, a business entrance, or a full property cleanup, the standard is the same: show up, do quality work, and leave the place looking better.
-        </p>
-      </div>
-
-      <div class="image-placeholder" aria-label="Landscaping work image placeholder"></div>
-    </div>
-  </section>
-
-  <section class="section lead-section" id="estimate">
-    <div class="section-intro">
-      <h2>Request a Free Estimate</h2>
-      <p>
-        Tell us a little about your property and what kind of landscaping support you need.
-      </p>
-    </div>
-
-    <form action="#" method="post">
-      <div class="form-grid">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-
-        <div>
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="(336) 555-1234" required>
-        </div>
-
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com">
-        </div>
-
-        <div>
-          <label for="property">Property Type</label>
-          <select id="property" name="property">
-            <option value="">Select one</option>
-            <option>Residential</option>
-            <option>Commercial</option>
-            <option>Rental / Managed Property</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="full">
-          <label for="service">Service Needed</label>
-          <select id="service" name="service">
-            <option value="">Select one</option>
-            <option>Lawn Maintenance</option>
-            <option>Landscape Cleanup</option>
-            <option>Mulch / Bed Maintenance</option>
-            <option>Landscape Design / Installation</option>
-            <option>Commercial Property Maintenance</option>
-            <option>Not Sure Yet</option>
-          </select>
-        </div>
-
-        <div class="full">
-          <label for="message">Project Details</label>
-          <textarea id="message" name="message" placeholder="Tell us what you need help with..."></textarea>
-        </div>
-      </div>
-
-      <button type="submit" class="submit-btn">Submit Estimate Request</button>
-    </form>
-  </section>
-
-  <footer>
-    <img src="klean_image_logo.jpg" alt="Klean Image Landscaping Logo" class="footer-logo-img">
-    <p>Residential & Commercial Landscaping</p>
-    <p>
-      Phone: <a href="tel:3365551234">(336) 555-1234</a> |
-      Email: <a href="mailto:info@kleanimagelandscaping.com">info@kleanimagelandscaping.com</a>
-    </p>
-    <p>&copy; 2026 Klean Image Landscaping. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>Klean Image Landscaping</p>
+  <p>(336) 555-1234</p>
+</footer>
 
 </body>
 </html>
