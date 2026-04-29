@@ -1,199 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klean Image Landscaping</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Klean Image Landscaping | Winston-Salem Landscaping</title>
 
 <style>
 :root{
-  --green:#0f5f3a;
-  --dark:#083b25;
-  --gold:#c8a24a;
+  --green:#173f2a;
+  --green-2:#245f3c;
+  --gold:#b89b5e;
+  --cream:#f7f4ec;
+  --ink:#172018;
+  --muted:#687167;
+  --line:#ddd6c8;
+  --white:#ffffff;
 }
+
+*{box-sizing:border-box;}
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  color:#222;
-}
-
-/* HEADER */
-
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 6%;
-  border-bottom:1px solid #eee;
-}
-
-.logo-text{
-  font-weight:900;
-  font-size:20px;
-  color:var(--green);
-  line-height:1.1;
-}
-
-.logo-text span{
-  display:block;
-  font-size:10px;
-  letter-spacing:2px;
-  color:#666;
-}
-
-nav a{
-  margin-left:20px;
-  font-weight:bold;
-  text-decoration:none;
-  color:#222;
-}
-
-/* HERO */
-
-.hero{
-  background:linear-gradient(rgba(8,59,37,.85), rgba(8,59,37,.85));
-  color:white;
-  padding:50px 6% 55px;
-  text-align:center;
-}
-
-.hero-logo{
-  width:60%;
-  max-width:600px;
-  height:auto;
-  margin:0 auto 18px;
-  display:block;
-}
-
-.hero h1{
-  font-size:40px;
-  margin:10px 0 8px;
-}
-
-.hero p{
-  font-size:18px;
-  margin:0 0 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  background:var(--cream);
   line-height:1.5;
 }
 
+a{text-decoration:none;color:inherit;}
+
+.container{
+  width:min(1120px,92%);
+  margin:0 auto;
+}
+
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--green);
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
 .btn{
-  padding:14px 22px;
-  background:var(--gold);
-  color:#083b25;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:4px;
   display:inline-block;
-}
-
-/* CONTACT BAR */
-
-.contact-bar{
+  padding:13px 22px;
   background:var(--green);
-  color:white;
-  text-align:center;
-  padding:16px;
-  font-weight:bold;
+  color:var(--white);
+  font-weight:700;
+  border-radius:2px;
+  letter-spacing:.04em;
 }
 
-.contact-bar a{
-  color:white;
+.hero{
+  padding:96px 0 84px;
+  background:
+    linear-gradient(90deg, rgba(247,244,236,.98), rgba(247,244,236,.82)),
+    radial-gradient(circle at right center, rgba(184,155,94,.18), transparent 40%);
 }
 
-/* SECTIONS */
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:56px;
+  align-items:center;
+}
 
-.section{
-  padding:55px 6%;
-  max-width:900px;
-  margin:auto;
-  text-align:center;
+.eyebrow{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(44px,7vw,78px);
+  line-height:.95;
+  margin:0 0 24px;
+  color:var(--green);
+  letter-spacing:-.05em;
+}
+
+.hero p{
+  font-size:22px;
+  max-width:620px;
+  color:#334033;
+  margin:0 0 22px;
+}
+
+.trust{
+  font-size:15px;
+  color:var(--muted);
+  margin:0 0 32px;
+}
+
+.hero-card{
+  background:var(--green);
+  color:var(--cream);
+  padding:36px;
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-radius:2px;
+  box-shadow:0 24px 70px rgba(23,63,42,.18);
+}
+
+.hero-card svg{
+  width:100%;
+  height:auto;
+  stroke:var(--gold);
+}
+
+.hero-card small{
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#d7c79c;
+}
+
+section{
+  padding:80px 0;
+}
+
+.section-head{
+  max-width:720px;
+  margin-bottom:42px;
+}
+
+.section-head h2{
+  font-size:42px;
+  line-height:1.05;
+  margin:0 0 14px;
+  color:var(--green);
+  letter-spacing:-.03em;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:18px;
+  margin:0;
 }
 
 .services{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:18px;
-  margin-top:24px;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
 }
 
-.card{
-  border:1px solid #ddd;
-  border-radius:8px;
-  padding:22px;
-  background:#fff;
+.service{
+  background:var(--white);
+  padding:28px;
+  border:1px solid var(--line);
+  min-height:300px;
 }
 
-.card h3{
+.service svg{
+  width:100%;
+  height:120px;
+  margin-bottom:20px;
+  stroke:var(--green);
+}
+
+.service h3{
+  margin:0 0 10px;
+  color:var(--green);
+  font-size:20px;
+}
+
+.service p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.story{
+  background:var(--white);
+}
+
+.story-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:54px;
+  align-items:start;
+}
+
+.stat{
+  border-left:4px solid var(--gold);
+  padding-left:24px;
   color:var(--green);
 }
 
-/* FORM */
-
-form{
-  background:white;
-  padding:28px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  text-align:left;
+.stat strong{
+  display:block;
+  font-size:56px;
+  line-height:1;
 }
 
-input, textarea, select{
-  width:100%;
-  padding:12px;
-  margin-bottom:14px;
-  border:1px solid #ccc;
-  border-radius:4px;
+.story-copy p{
+  font-size:20px;
+  margin-top:0;
+  color:#344035;
 }
 
-button{
-  width:100%;
-  padding:14px;
+.cta{
   background:var(--green);
-  color:white;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
+  color:var(--cream);
+  text-align:center;
+  padding:76px 0;
 }
 
-/* FOOTER */
+.cta h2{
+  font-size:44px;
+  margin:0 0 16px;
+  letter-spacing:-.03em;
+}
+
+.cta p{
+  margin:0 0 28px;
+  color:#d9d0bd;
+  font-size:18px;
+}
+
+.cta .btn{
+  background:var(--gold);
+  color:var(--green);
+}
 
 footer{
-  background:var(--dark);
-  color:white;
-  text-align:center;
-  padding:26px;
+  background:#102c1e;
+  color:#d9d0bd;
+  padding:34px 0;
+  font-size:14px;
 }
 
-footer img{
-  height:70px;
-  margin-bottom:10px;
+.footer-flex{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-/* MOBILE */
-
-@media(max-width:800px){
-
-  header{
-    flex-direction:column;
-    gap:14px;
+@media(max-width:850px){
+  .hero-grid,
+  .story-grid{
+    grid-template-columns:1fr;
   }
 
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+@media(max-width:560px){
   .services{
     grid-template-columns:1fr;
   }
 
   .hero{
-    padding:40px 6% 45px;
+    padding:70px 0 60px;
   }
 
-  .hero-logo{
-    width:80%;
-    margin-bottom:14px;
-  }
-
-  .hero h1{
-    font-size:30px;
+  .hero-card{
+    min-height:auto;
   }
 }
 </style>
@@ -202,93 +304,147 @@ footer img{
 <body>
 
 <header>
-  <div class="logo-text">
-    KLEAN IMAGE
-    <span>LANDSCAPING</span>
+  <div class="container nav">
+    <div class="logo">KLEAN <span>IMAGE</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#story">About</a>
+      <a href="#quote" class="btn">Request a Quote</a>
+    </nav>
   </div>
-
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#estimate">Free Estimate</a>
-    <a href="tel:3365551234">Call</a>
-  </nav>
 </header>
 
+<main>
+
 <section class="hero">
-  <img src="klean_image_logo.PNG" alt="Klean Image Landscaping Logo" class="hero-logo">
-
-  <h1>Clean Work. Clear Standards.</h1>
-
-  <p>
-    Reliable residential and commercial landscaping.<br>
-    <strong>Serving the Winston-Salem area since 1968.</strong>
-  </p>
-
-  <a href="#estimate" class="btn">Request a Free Estimate</a>
-</section>
-
-<div class="contact-bar">
-  Call for a Free Estimate: 
-  <a href="tel:3365551234">(336) 555-1234</a>
-</div>
-
-<section class="section" id="services">
-  <h2>Landscaping Services</h2>
-
-  <div class="services">
-    <div class="card">
-      <h3>Lawn Maintenance</h3>
-      <p>Mowing, trimming, edging, and routine lawn care.</p>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Commercial & Residential Landscaping</div>
+      <h1>Clean lines. Strong impressions.</h1>
+      <p>Shaping the character of Winston-Salem properties since 1968.</p>
+      <div class="trust">Family-owned. Professionally managed. Fully insured.</div>
+      <a href="#quote" class="btn">Request a Quote</a>
     </div>
 
-    <div class="card">
-      <h3>Landscape Services</h3>
-      <p>Mulch, planting, and seasonal refreshes.</p>
-    </div>
+    <div class="hero-card">
+      <small>Precision exterior work</small>
 
-    <div class="card">
-      <h3>Commercial Properties</h3>
-      <p>Reliable care for businesses and managed properties.</p>
+      <svg viewBox="0 0 500 360" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M70 260 C130 215 180 235 235 190 C300 135 360 160 430 95" />
+        <path d="M85 290 H430" />
+        <path d="M105 255 H185" />
+        <path d="M230 220 H320" />
+        <path d="M335 185 H410" />
+        <path d="M110 290 V250" />
+        <path d="M160 290 V260" />
+        <path d="M235 290 V218" />
+        <path d="M290 290 V220" />
+        <path d="M360 290 V180" />
+        <path d="M410 290 V120" />
+        <path d="M385 112 C398 85 430 78 454 96 C430 107 410 120 385 112Z" />
+        <path d="M342 158 C353 132 383 126 404 142 C382 154 365 165 342 158Z" />
+      </svg>
+
+      <small>Built with care. Kept with pride.</small>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Family-Owned. Built on Decades of Work.</h2>
-  <p>
-    Klean Image brings hands-on care, reliability, and pride to every property — from home lawns to commercial spaces.
-  </p>
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Exterior work with a finished look.</h2>
+      <p>From ongoing property care to landscape improvements, Klean Image helps homes and businesses look considered, cared for, and complete.</p>
+    </div>
+
+    <div class="services">
+
+      <div class="service">
+        <svg viewBox="0 0 220 120" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 88 H200" />
+          <path d="M30 78 C55 62 80 62 105 78 C130 94 155 94 190 70" />
+          <path d="M35 88 V70" />
+          <path d="M65 88 V64" />
+          <path d="M95 88 V76" />
+          <path d="M125 88 V82" />
+          <path d="M155 88 V80" />
+          <path d="M185 88 V68" />
+        </svg>
+        <h3>Landscape Care</h3>
+        <p>Clean, consistent maintenance that keeps properties sharp and presentable.</p>
+      </div>
+
+      <div class="service">
+        <svg viewBox="0 0 220 120" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M25 85 H195" />
+          <path d="M35 85 L55 65 H90 L110 85" />
+          <path d="M95 85 L118 58 H160 L185 85" />
+          <path d="M58 65 L68 76" />
+          <path d="M82 65 L92 76" />
+          <path d="M122 58 L134 72" />
+          <path d="M150 58 L162 72" />
+        </svg>
+        <h3>Stonework</h3>
+        <p>Defined edges, walls, and features that bring structure to outdoor spaces.</p>
+      </div>
+
+      <div class="service">
+        <svg viewBox="0 0 220 120" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 90 C60 70 90 70 110 88 C135 64 170 62 195 82" />
+          <path d="M55 78 C50 58 68 45 85 55 C78 65 70 75 55 78Z" />
+          <path d="M115 84 C105 60 125 42 145 52 C135 65 130 78 115 84Z" />
+          <path d="M165 75 C158 55 176 45 193 54 C185 66 178 73 165 75Z" />
+        </svg>
+        <h3>Planting & Beds</h3>
+        <p>Thoughtful planting, clean bed lines, and details that improve curb appeal.</p>
+      </div>
+
+      <div class="service">
+        <svg viewBox="0 0 220 120" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M35 94 C70 64 105 52 185 42" />
+          <path d="M45 84 L70 92" />
+          <path d="M70 68 L100 80" />
+          <path d="M105 55 L135 68" />
+          <path d="M145 48 L175 58" />
+          <path d="M35 94 C80 105 135 100 190 76" />
+        </svg>
+        <h3>Walkways & Paths</h3>
+        <p>Functional outdoor routes with a polished, intentional finish.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section class="section" id="estimate">
-  <h2>Request a Free Estimate</h2>
+<section class="story" id="story">
+  <div class="container story-grid">
+    <div class="stat">
+      <strong>1968</strong>
+      <span>serving Winston-Salem properties</span>
+    </div>
 
-  <form action="https://formspree.io/f/mwvagnpz" method="POST">
-    <input type="hidden" name="_subject" value="New Klean Image Estimate Request">
-    <input type="hidden" name="_next" value="https://YOUR-USERNAME.github.io/klean_image/thank-you.html">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="email" name="email" placeholder="Email">
-
-    <select name="service">
-      <option value="">Service Needed</option>
-      <option>Lawn Maintenance</option>
-      <option>Landscaping</option>
-      <option>Cleanup</option>
-      <option>Commercial</option>
-    </select>
-
-    <textarea name="message" placeholder="Tell us about your project"></textarea>
-
-    <button type="submit">Submit Request</button>
-  </form>
+    <div class="story-copy">
+      <p>Klean Image is a local, family-owned landscaping company built on pride, consistency, and the belief that a property’s exterior should reflect the care behind it.</p>
+      <p>Whether maintaining a commercial site, improving a residential landscape, or building a more finished outdoor space, the work is handled with a simple standard: leave it cleaner, sharper, and better than it was found.</p>
+    </div>
+  </div>
 </section>
+
+<section class="cta" id="quote">
+  <div class="container">
+    <h2>Let’s shape a better first impression.</h2>
+    <p>Tell us about your property and what you need done.</p>
+    <a href="tel:0000000000" class="btn">Request a Quote</a>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <img src="klean_image_logo.PNG" alt="Klean Image Landscaping Logo">
-  <p>Klean Image Landscaping · Winston-Salem, NC</p>
-  <p><a href="tel:3365551234" style="color:white;">(336) 555-1234</a></p>
+  <div class="container footer-flex">
+    <div>© Klean Image Landscaping</div>
+    <div>Winston-Salem, North Carolina</div>
+  </div>
 </footer>
 
 </body>
