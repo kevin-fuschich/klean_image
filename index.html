@@ -40,7 +40,7 @@ nav a{
 }
 
 .hero{
-  background:linear-gradient(rgba(8,59,37,.72), rgba(8,59,37,.72));
+  background:linear-gradient(rgba(8,59,37,.75), rgba(8,59,37,.75));
   color:white;
   padding:80px 6%;
   text-align:center;
@@ -77,12 +77,13 @@ nav a{
   background:var(--green);
   color:white;
   text-align:center;
-  padding:20px;
+  padding:18px;
   font-weight:bold;
 }
 
 .contact-bar a{
   color:white;
+  text-decoration:underline;
 }
 
 .section{
@@ -196,13 +197,18 @@ footer img{
   <img src="klean_image_logo.png" alt="Klean Image Landscaping Logo" class="hero-logo">
 
   <h1>Clean Work. Clear Standards.</h1>
-  <p>Reliable residential and commercial landscaping for properties that need to look right.</p>
+
+  <p>
+    Reliable residential and commercial landscaping for properties that need to look right.<br><br>
+    <strong>Serving the Winston-Salem area since 1968.</strong>
+  </p>
 
   <a href="#estimate" class="btn">Request a Free Estimate</a>
 </section>
 
 <div class="contact-bar">
-  Call Now: <a href="tel:3365551234">(336) 555-1234</a>
+  Serving Winston-Salem & Surrounding Areas Since 1968 · 
+  <a href="tel:3365551234">(336) 555-1234</a>
 </div>
 
 <section class="section" id="services">
@@ -228,9 +234,14 @@ footer img{
 </section>
 
 <section class="section">
-  <h2>Family-Owned. Hands-On. Built on Quality Work.</h2>
+  <h2>Family-Owned. Built on Decades of Work.</h2>
+
   <p>
-    Klean Image is a family-owned landscaping business serving residential and commercial customers with pride, consistency, and care.
+    Klean Image has been serving the Winston-Salem area since 1968, delivering consistent, high-quality landscaping for homes and businesses.
+  </p>
+
+  <p>
+    Built through hard work, reliability, and a commitment to doing the job right every time.
   </p>
 </section>
 
@@ -239,7 +250,9 @@ footer img{
   <p>Tell us a little about your property and what kind of landscaping support you need.</p>
 
   <form action="https://formspree.io/f/mwvagnpz" method="POST">
+
     <input type="hidden" name="_subject" value="New Klean Image Estimate Request">
+
     <input type="hidden" name="_next" value="https://YOUR-USERNAME.github.io/klean_image/thank-you.html">
 
     <input type="text" name="name" placeholder="Your Name" required>
@@ -266,12 +279,14 @@ footer img{
     <textarea name="message" placeholder="Tell us about your project"></textarea>
 
     <button type="submit">Submit Request</button>
+
   </form>
 </section>
 
 <footer>
   <img src="klean_image_logo.png" alt="Klean Image Landscaping Logo">
   <p>Residential & Commercial Landscaping</p>
+  <p>Serving Winston-Salem Since 1968</p>
   <p><a href="tel:3365551234" style="color:white;">(336) 555-1234</a></p>
 </footer>
 
