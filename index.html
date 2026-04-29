@@ -18,6 +18,8 @@ body{
   color:#222;
 }
 
+/* HEADER */
+
 header{
   display:flex;
   justify-content:space-between;
@@ -26,10 +28,18 @@ header{
   border-bottom:1px solid #eee;
 }
 
-.logo{
-  height:70px;
-  max-width:260px;
-  object-fit:contain;
+.logo-text{
+  font-weight:900;
+  font-size:20px;
+  color:var(--green);
+  line-height:1.1;
+}
+
+.logo-text span{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#666;
 }
 
 nav a{
@@ -39,22 +49,24 @@ nav a{
   color:#222;
 }
 
+/* HERO */
+
 .hero{
-  background:linear-gradient(rgba(8,59,37,.75), rgba(8,59,37,.75));
+  background:linear-gradient(rgba(8,59,37,.8), rgba(8,59,37,.8));
   color:white;
   padding:80px 6%;
   text-align:center;
 }
 
 .hero-logo{
-  height:120px;
-  max-width:90%;
-  object-fit:contain;
-  margin-bottom:22px;
+  width:65%;
+  max-width:700px;
+  height:auto;
+  margin-bottom:30px;
 }
 
 .hero h1{
-  font-size:48px;
+  font-size:44px;
   margin-bottom:10px;
 }
 
@@ -73,6 +85,8 @@ nav a{
   display:inline-block;
 }
 
+/* CONTACT BAR */
+
 .contact-bar{
   background:var(--green);
   color:white;
@@ -83,8 +97,9 @@ nav a{
 
 .contact-bar a{
   color:white;
-  text-decoration:underline;
 }
+
+/* SECTIONS */
 
 .section{
   padding:60px 6%;
@@ -109,8 +124,9 @@ nav a{
 
 .card h3{
   color:var(--green);
-  margin-top:0;
 }
+
+/* FORM */
 
 form{
   background:white;
@@ -122,16 +138,10 @@ form{
 
 input, textarea, select{
   width:100%;
-  box-sizing:border-box;
   padding:12px;
   margin-bottom:15px;
   border:1px solid #ccc;
   border-radius:4px;
-  font-size:16px;
-}
-
-textarea{
-  min-height:120px;
 }
 
 button{
@@ -142,9 +152,9 @@ button{
   border:none;
   font-weight:bold;
   cursor:pointer;
-  font-size:16px;
-  border-radius:4px;
 }
+
+/* FOOTER */
 
 footer{
   background:var(--dark);
@@ -155,10 +165,10 @@ footer{
 
 footer img{
   height:80px;
-  max-width:260px;
-  object-fit:contain;
   margin-bottom:12px;
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
   header{
@@ -166,16 +176,16 @@ footer img{
     gap:16px;
   }
 
-  nav a{
-    margin:0 10px;
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .hero-logo{
+    width:85%;
   }
 
   .hero h1{
-    font-size:38px;
-  }
-
-  .services{
-    grid-template-columns:1fr;
+    font-size:34px;
   }
 }
 </style>
@@ -184,7 +194,10 @@ footer img{
 <body>
 
 <header>
-  <img src="klean_image_logo.PNG" alt="Klean Image Landscaping Logo" class="logo">
+  <div class="logo-text">
+    KLEAN IMAGE
+    <span>LANDSCAPING</span>
+  </div>
 
   <nav>
     <a href="#services">Services</a>
@@ -207,13 +220,13 @@ footer img{
 </section>
 
 <div class="contact-bar">
-  
+  Serving Winston-Salem & Surrounding Areas Since 1968 · 
   <a href="tel:3365551234">(336) 555-1234</a>
 </div>
 
 <section class="section" id="services">
   <h2>Landscaping Services</h2>
-  <p>Klean Image provides dependable lawn care, landscaping, cleanup, and property maintenance for homes and businesses.</p>
+  <p>Dependable lawn care, landscaping, cleanup, and property maintenance.</p>
 
   <div class="services">
     <div class="card">
@@ -228,64 +241,45 @@ footer img{
 
     <div class="card">
       <h3>Commercial Properties</h3>
-      <p>Reliable care for businesses, churches, offices, and managed properties.</p>
+      <p>Reliable care for businesses and managed properties.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Family-Owned. Built on Decades of Honest and Quality Work.</h2>
-
+  <h2>Family-Owned. Built on Decades of Work.</h2>
   <p>
-    Klean Image has been serving the Winston-Salem area since 1968, delivering consistent, high-quality landscaping for homes and businesses.
-  </p>
-
-  <p>
-    Built through hard work, reliability, and a commitment to doing the job right every time.
+    Klean Image has been serving the Winston-Salem area since 1968, delivering consistent, high-quality landscaping.
   </p>
 </section>
 
 <section class="section" id="estimate">
   <h2>Request a Free Estimate</h2>
-  <p>Tell us a little about your property and what kind of landscaping support you need.</p>
 
   <form action="https://formspree.io/f/mwvagnpz" method="POST">
-
     <input type="hidden" name="_subject" value="New Klean Image Estimate Request">
-
     <input type="hidden" name="_next" value="https://YOUR-USERNAME.github.io/klean_image/thank-you.html">
 
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="tel" name="phone" placeholder="Phone Number" required>
     <input type="email" name="email" placeholder="Email">
 
-    <select name="property_type">
-      <option value="">Property Type</option>
-      <option>Residential</option>
-      <option>Commercial</option>
-      <option>Rental / Managed Property</option>
-      <option>Other</option>
-    </select>
-
     <select name="service">
       <option value="">Service Needed</option>
       <option>Lawn Maintenance</option>
       <option>Landscaping</option>
       <option>Cleanup</option>
-      <option>Commercial Property Maintenance</option>
-      <option>Not Sure Yet</option>
+      <option>Commercial</option>
     </select>
 
     <textarea name="message" placeholder="Tell us about your project"></textarea>
 
     <button type="submit">Submit Request</button>
-
   </form>
 </section>
 
 <footer>
-  <img src="klean_image_logo.png" alt="Klean Image Landscaping Logo">
-  <p>Residential & Commercial Landscaping</p>
+  <img src="klean_image_logo.PNG" alt="Klean Image Landscaping Logo">
   <p>Serving Winston-Salem Since 1968</p>
   <p><a href="tel:3365551234" style="color:white;">(336) 555-1234</a></p>
 </footer>
