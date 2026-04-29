@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Klean Image Landscaping | Winston-Salem Landscaping</title>
+<title>Klean Image Landscaping | Winston-Salem</title>
 
 <style>
 :root{
   --green:#173f2a;
-  --green-2:#245f3c;
   --gold:#b89b5e;
   --cream:#f7f4ec;
   --ink:#172018;
@@ -25,128 +24,85 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   color:var(--ink);
   background:var(--cream);
-  line-height:1.5;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
 }
 
 .container{
-  width:min(1120px,92%);
+  width:min(1100px,92%);
   margin:0 auto;
 }
 
 header{
-  background:var(--white);
+  background:#fff;
   border-bottom:1px solid var(--line);
 }
 
 .nav{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   padding:18px 0;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:.08em;
-  color:var(--green);
+.logo img{
+  height:48px;
 }
 
-.logo span{
-  color:var(--gold);
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
+.nav a{
+  text-decoration:none;
+  color:var(--ink);
+  margin-left:24px;
   font-size:14px;
   text-transform:uppercase;
   letter-spacing:.08em;
 }
 
 .btn{
-  display:inline-block;
-  padding:13px 22px;
   background:var(--green);
-  color:var(--white);
-  font-weight:700;
+  color:#fff;
+  padding:12px 20px;
+  text-decoration:none;
+  font-weight:bold;
   border-radius:2px;
-  letter-spacing:.04em;
 }
 
 .hero{
-  padding:92px 0 84px;
-  background:
-    linear-gradient(90deg, rgba(247,244,236,.98), rgba(247,244,236,.82)),
-    radial-gradient(circle at right center, rgba(184,155,94,.18), transparent 42%);
+  padding:90px 0 80px;
 }
 
-.hero-inner{
-  max-width:850px;
-}
-
-.eyebrow{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:13px;
-  font-weight:700;
+.hero h1{
+  font-size:48px;
+  line-height:1.1;
   margin-bottom:18px;
-}
-
-h1{
-  font-size:clamp(46px,8vw,82px);
-  line-height:.95;
-  margin:0 0 24px;
   color:var(--green);
-  letter-spacing:-.055em;
 }
 
 .hero p{
-  font-size:22px;
-  max-width:680px;
-  color:#334033;
-  margin:0 0 22px;
+  font-size:20px;
+  margin-bottom:16px;
 }
 
 .trust{
-  font-size:15px;
+  font-size:14px;
   color:var(--muted);
-  margin:0 0 32px;
+  margin-bottom:28px;
 }
 
 section{
-  padding:76px 0;
+  padding:70px 0;
 }
 
 .section-head{
-  max-width:760px;
-  margin-bottom:42px;
+  margin-bottom:40px;
 }
 
 .section-head h2{
-  font-size:clamp(34px,5vw,48px);
-  line-height:1.05;
-  margin:0 0 16px;
-  color:var(--green);
-  letter-spacing:-.035em;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
 .section-head p{
   color:var(--muted);
-  font-size:18px;
-  margin:0;
+  max-width:700px;
 }
 
 .services{
@@ -156,18 +112,17 @@ section{
 }
 
 .service{
-  background:var(--white);
+  background:#fff;
   border:1px solid var(--line);
-  padding:0 0 26px;
 }
 
 .illustration{
-  height:210px;
-  padding:24px 24px 12px;
+  height:200px;
+  padding:20px;
+  border-bottom:1px solid var(--line);
   display:flex;
   align-items:center;
   justify-content:center;
-  border-bottom:1px solid var(--line);
 }
 
 .illustration img{
@@ -177,123 +132,78 @@ section{
 }
 
 .service-copy{
-  padding:24px 24px 0;
+  padding:20px;
 }
 
 .service h3{
-  margin:0 0 10px;
-  color:var(--green);
-  font-size:20px;
+  margin-bottom:8px;
 }
 
 .service p{
-  margin:0;
   color:var(--muted);
-  font-size:15px;
+  font-size:14px;
 }
 
-.story{
-  background:var(--white);
+.about{
+  background:#fff;
 }
 
-.story-grid{
+.about-grid{
   display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:54px;
-  align-items:start;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 
-.story-kicker{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:13px;
-  font-weight:700;
+.about h2{
+  font-size:32px;
+  color:var(--green);
+}
+
+.about p{
   margin-bottom:14px;
 }
 
-.story h2{
-  font-size:clamp(34px,5vw,48px);
-  line-height:1.05;
-  margin:0;
-  color:var(--green);
-  letter-spacing:-.035em;
+.about-logo{
+  margin-top:20px;
 }
 
-.story-copy p{
-  font-size:20px;
-  margin:0 0 20px;
-  color:#344035;
+.about-logo img{
+  height:60px;
 }
 
-.close{
+.cta{
   background:var(--green);
-  color:var(--cream);
-  padding:76px 0;
+  color:#fff;
+  padding:70px 0;
 }
 
-.close-inner{
-  max-width:780px;
+.cta h2{
+  font-size:32px;
+  margin-bottom:12px;
 }
 
-.close h2{
-  font-size:clamp(34px,5vw,50px);
-  line-height:1.05;
-  margin:0 0 16px;
-  letter-spacing:-.035em;
+.cta p{
+  margin-bottom:24px;
+  color:#e6e0d2;
 }
 
-.close p{
-  margin:0 0 28px;
-  color:#d9d0bd;
-  font-size:18px;
-}
-
-.close .btn{
+.cta .btn{
   background:var(--gold);
   color:var(--green);
 }
 
 footer{
   background:#102c1e;
-  color:#d9d0bd;
-  padding:42px 0;
+  color:#ccc;
+  padding:40px 0;
   font-size:14px;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:32px;
-}
-
-.footer-brand{
-  color:var(--white);
-  font-weight:800;
-  letter-spacing:.08em;
-  font-size:20px;
-  margin-bottom:8px;
-}
-
-.footer-brand span{
-  color:var(--gold);
-}
-
-.footer-small{
-  color:#bfb6a4;
-}
-
-.footer-label{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.footer p{
-  margin:0 0 8px;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
 @media(max-width:900px){
@@ -301,31 +211,14 @@ footer{
     grid-template-columns:1fr 1fr;
   }
 
-  .story-grid,
-  .footer-grid{
+  .about-grid{
     grid-template-columns:1fr;
   }
 }
 
-@media(max-width:640px){
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    padding:72px 0 64px;
-  }
-
-  section{
-    padding:60px 0;
-  }
-
+@media(max-width:600px){
   .services{
     grid-template-columns:1fr;
-  }
-
-  .illustration{
-    height:230px;
   }
 }
 </style>
@@ -335,13 +228,14 @@ footer{
 
 <header>
   <div class="container nav">
-    <div class="logo">KLEAN <span>IMAGE</span></div>
-
-    <nav class="nav-links">
+    <div class="logo">
+      <img src="images/logo.png" alt="Klean Image logo">
+    </div>
+    <div>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#quote" class="btn">Request a Quote</a>
-    </nav>
+    </div>
   </div>
 </header>
 
@@ -349,97 +243,98 @@ footer{
 
 <section class="hero">
   <div class="container">
-    <div class="hero-inner">
-      <div class="eyebrow">Commercial & Residential Landscaping</div>
+    <h1>Landscape care, stonework, and custom outdoor solutions.</h1>
 
-      <h1>Clean lines. Strong work.</h1>
+    <p>Shaping the character of Winston-Salem properties since 1968.</p>
 
-      <p>Shaping the character of Winston-Salem properties since 1968.</p>
+    <div class="trust">Family-owned. Professionally managed. Fully insured.</div>
 
-      <div class="trust">Family-owned. Professionally managed. Fully insured.</div>
-
-      <a href="#quote" class="btn">Request a Quote</a>
-    </div>
+    <a href="#quote" class="btn">Request a Quote</a>
   </div>
 </section>
 
 <section id="services">
   <div class="container">
+
     <div class="section-head">
-      <h2>Landscaping built around the property.</h2>
-      <p>From routine care to custom outdoor improvements, Klean Image handles the work that keeps a property useful, cared for, and well-kept.</p>
+      <h2>What we do</h2>
+      <p>From regular landscape care to stonework, paths, and custom outdoor projects, Klean Image helps Winston-Salem properties look finished, cared for, and built to last.</p>
     </div>
 
     <div class="services">
 
-      <article class="service">
+      <div class="service">
         <div class="illustration">
-          <img src="images/landscape-care.jpg" alt="Landscape care illustration">
+          <img src="images/landscape-care.jpg">
         </div>
         <div class="service-copy">
           <h3>Landscape Care</h3>
           <p>Clean, consistent maintenance that keeps properties sharp and presentable.</p>
         </div>
-      </article>
+      </div>
 
-      <article class="service">
+      <div class="service">
         <div class="illustration">
-          <img src="images/stonework.jpg" alt="Stonework illustration">
+          <img src="images/stonework.jpg">
         </div>
         <div class="service-copy">
           <h3>Stonework</h3>
           <p>Defined edges, walls, and features that bring structure to outdoor spaces.</p>
         </div>
-      </article>
+      </div>
 
-      <article class="service">
+      <div class="service">
         <div class="illustration">
-          <img src="images/walkways-and-paths.jpg" alt="Walkways and paths illustration">
+          <img src="images/walkways-and-paths.jpg">
         </div>
         <div class="service-copy">
-          <h3>Walkways &amp; Paths</h3>
+          <h3>Walkways & Paths</h3>
           <p>Functional outdoor routes with a polished, intentional finish.</p>
         </div>
-      </article>
+      </div>
 
-      <article class="service">
+      <div class="service">
         <div class="illustration">
-          <img src="images/custom-solutions.jpg" alt="Custom landscaping solutions illustration">
+          <img src="images/custom-solutions.jpg">
         </div>
         <div class="service-copy">
           <h3>Custom Solutions</h3>
           <p>Site-specific work for properties that need more than a standard service list.</p>
         </div>
-      </article>
+      </div>
 
     </div>
+
   </div>
 </section>
 
-<section class="story" id="about">
-  <div class="container story-grid">
+<section class="about" id="about">
+  <div class="container about-grid">
+
     <div>
-      <div class="story-kicker">Local. Established. Built on pride.</div>
-      <h2>A landscaping company with deep Winston-Salem roots.</h2>
+      <h2>Deep Winston-Salem roots.</h2>
     </div>
 
-    <div class="story-copy">
-      <p>Klean Image is a local, family-owned landscaping company serving Winston-Salem homes and commercial properties.</p>
+    <div>
+      <p>Klean Image is a local, family-owned landscaping business serving Winston-Salem homes and commercial properties.</p>
 
       <p>The work ranges from ongoing care to outdoor improvements that change how a property looks, functions, and feels.</p>
 
       <p>The standard is simple: do the work well, keep the property looking cared for, and build lasting relationships with the people who trust us with their space.</p>
+
+      <div class="about-logo">
+        <img src="images/logo.png">
+      </div>
     </div>
+
   </div>
 </section>
 
-<section class="close" id="quote">
+<section class="cta" id="quote">
   <div class="container">
-    <div class="close-inner">
-      <h2>Have a property that needs attention?</h2>
-      <p>Tell us what you’re working on, what needs to change, or what needs to be maintained.</p>
-      <a href="tel:0000000000" class="btn">Request a Quote</a>
-    </div>
+    <h2>Let’s talk about your property.</h2>
+    <p>Tell us what you’re working on, what needs to change, or what needs to be maintained.</p>
+    <a href="tel:0000000000" class="btn">Request a Quote</a>
   </div>
 </section>
 
@@ -447,25 +342,8 @@ footer{
 
 <footer>
   <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">KLEAN <span>IMAGE</span></div>
-      <p class="footer-small">Commercial &amp; residential landscaping in Winston-Salem, North Carolina.</p>
-    </div>
-
-    <div>
-      <div class="footer-label">Services</div>
-      <p>Landscape Care</p>
-      <p>Stonework</p>
-      <p>Walkways &amp; Paths</p>
-      <p>Custom Solutions</p>
-    </div>
-
-    <div>
-      <div class="footer-label">Contact</div>
-      <p><a href="tel:0000000000">Request a Quote</a></p>
-      <p class="footer-small">Family-owned. Professionally managed. Fully insured.</p>
-      <p class="footer-small">© Klean Image. All rights reserved.</p>
-    </div>
+    <div>Klean Image Landscaping</div>
+    <div>Winston-Salem, North Carolina</div>
   </div>
 </footer>
 
