@@ -14,23 +14,33 @@
   --ink:#172018;
   --muted:#687167;
   --line:#ddd6c8;
+  --white:#ffffff;
 }
 
 *{box-sizing:border-box;}
 
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:var(--cream);
   color:var(--ink);
+  line-height:1.5;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
 }
 
 .container{
-  width:min(1100px,92%);
-  margin:auto;
+  width:min(1120px,92%);
+  margin:0 auto;
 }
-
-a{text-decoration:none;color:inherit;}
 
 /* HEADER */
 
@@ -40,29 +50,32 @@ header{
 }
 
 .nav{
+  min-height:82px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:16px 0;
-  gap:20px;
+  justify-content:space-between;
+  gap:24px;
 }
 
-.wordmark{
-  font-size:26px;
-  font-weight:800;
-  letter-spacing:.08em;
-  color:var(--green);
+.header-logo{
+  background:var(--green);
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.wordmark span{
-  color:var(--gold);
+.header-logo img{
+  width:170px;
+  height:auto;
 }
 
 .nav-right{
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:22px;
   flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
 .nav-right a{
@@ -78,69 +91,92 @@ header{
 
 .nav-btn{
   background:var(--green);
-  color:#fff;
-  padding:10px 16px;
+  color:#fff !important;
+  padding:11px 18px;
+  border-radius:2px;
   font-weight:800;
 }
 
 /* HERO */
 
 .hero{
-  background:var(--green);
-  color:#fff;
-  padding:90px 0 80px;
+  padding:76px 0;
 }
 
-.hero-logo{
-  margin-bottom:30px;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:52px;
+  align-items:center;
 }
 
-.hero-logo img{
-  width:340px;
-  max-width:90%;
-  display:block;
+.hero-copy h1{
+  font-size:clamp(42px,6vw,64px);
+  line-height:1.04;
+  margin:0 0 20px;
+  color:var(--green);
+  letter-spacing:-.04em;
 }
 
-.hero h1{
-  font-size:46px;
-  margin-bottom:18px;
-}
-
-.hero p{
-  font-size:20px;
-  margin-bottom:16px;
+.hero-copy p{
+  font-size:21px;
+  margin:0 0 16px;
+  max-width:680px;
 }
 
 .trust{
-  color:#d9d2bf;
-  margin-bottom:30px;
+  color:var(--muted);
+  margin:0 0 30px;
+  font-size:15px;
 }
 
 .btn{
-  background:var(--gold);
-  color:var(--green);
-  padding:12px 18px;
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:13px 21px;
+  border-radius:2px;
   font-weight:800;
+}
+
+.hero-logo-panel{
+  background:var(--green);
+  min-height:360px;
+  padding:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-logo-panel img{
+  width:420px;
+  max-width:100%;
+  height:auto;
 }
 
 /* SERVICES */
 
 section{
-  padding:70px 0;
+  padding:74px 0;
 }
 
 .section-head{
-  margin-bottom:40px;
+  margin-bottom:42px;
+  max-width:760px;
 }
 
 .section-head h2{
-  font-size:34px;
-  margin-bottom:10px;
+  font-size:38px;
+  line-height:1.08;
+  margin:0 0 12px;
+  color:var(--green);
+  letter-spacing:-.025em;
 }
 
 .section-head p{
   color:var(--muted);
-  max-width:700px;
+  font-size:17px;
+  margin:0;
 }
 
 .services{
@@ -155,9 +191,12 @@ section{
 }
 
 .illustration{
-  height:200px;
-  padding:20px;
+  height:210px;
+  padding:22px;
   border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .illustration img{
@@ -167,11 +206,18 @@ section{
 }
 
 .service-copy{
-  padding:20px;
+  padding:22px;
+}
+
+.service h3{
+  margin:0 0 8px;
+  color:var(--green);
 }
 
 .service p{
+  margin:0;
   color:var(--muted);
+  font-size:14px;
 }
 
 /* ABOUT */
@@ -182,14 +228,22 @@ section{
 
 .about-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+  grid-template-columns:.9fr 1.1fr;
+  gap:52px;
+  align-items:start;
 }
 
-.about-logo img{
-  width:200px;
-  margin-top:20px;
+.about h2{
+  font-size:40px;
+  line-height:1.08;
+  margin:0;
+  color:var(--green);
+  letter-spacing:-.025em;
+}
+
+.about p{
+  margin:0 0 16px;
+  font-size:18px;
 }
 
 /* CTA */
@@ -197,7 +251,27 @@ section{
 .cta{
   background:var(--green);
   color:#fff;
-  padding:70px 0;
+  padding:72px 0;
+}
+
+.cta-grid{
+  display:grid;
+  grid-template-columns:1fr .75fr;
+  gap:40px;
+  align-items:center;
+}
+
+.cta h2{
+  font-size:40px;
+  line-height:1.08;
+  margin:0 0 14px;
+  letter-spacing:-.025em;
+}
+
+.cta p{
+  margin:0 0 26px;
+  color:#e6e0d2;
+  font-size:18px;
 }
 
 .cta .btn{
@@ -205,32 +279,88 @@ section{
   color:var(--green);
 }
 
+.cta-logo{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.cta-logo img{
+  width:300px;
+  max-width:100%;
+}
+
 /* FOOTER */
 
 footer{
   background:#102c1e;
-  color:#ccc;
-  padding:40px 0;
+  color:#d7d0c2;
+  padding:38px 0;
+  font-size:14px;
 }
 
 .footer-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.footer-right{
+  text-align:right;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
-  .services{grid-template-columns:1fr 1fr;}
-  .about-grid{grid-template-columns:1fr;}
+  .hero-grid,
+  .about-grid,
+  .cta-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cta-logo{
+    justify-content:flex-start;
+  }
 }
 
-@media(max-width:700px){
-  .nav{flex-direction:column;align-items:flex-start;}
+@media(max-width:720px){
+  .nav{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:16px 0;
+  }
+
+  .nav-right{
+    justify-content:flex-start;
+    gap:14px;
+  }
+
+  .header-logo img{
+    width:150px;
+  }
 }
 
 @media(max-width:600px){
-  .services{grid-template-columns:1fr;}
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .hero-logo-panel{
+    min-height:260px;
+    padding:32px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-right{
+    text-align:left;
+  }
 }
 </style>
 </head>
@@ -240,34 +370,38 @@ footer{
 <header>
   <div class="container nav">
 
-    <div class="wordmark">KLEAN <span>IMAGE</span></div>
+    <a href="#" class="header-logo">
+      <img src="klean_image_logo.PNG" alt="Klean Image Landscaping logo">
+    </a>
 
     <div class="nav-right">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="tel:0000000000" class="phone">(000) 000-0000</a>
-      <a href="#quote" class="nav-btn">REQUEST QUOTE</a>
+      <a href="#quote" class="nav-btn">Request Quote</a>
     </div>
 
   </div>
 </header>
 
-<!-- HERO WITH GREEN BACKGROUND (FIXED LOGO ISSUE) -->
+<main>
 
 <section class="hero">
-  <div class="container">
+  <div class="container hero-grid">
 
-    <div class="hero-logo">
-      <img src="klean_image_logo.PNG" alt="Klean Image logo">
+    <div class="hero-copy">
+      <h1>Landscape care, stonework, and custom outdoor solutions.</h1>
+
+      <p>Shaping the character of Winston-Salem properties since 1968.</p>
+
+      <div class="trust">Family-owned. Professionally managed. Fully insured.</div>
+
+      <a href="#quote" class="btn">Request a Quote</a>
     </div>
 
-    <h1>Landscape care, stonework, and custom outdoor solutions.</h1>
-
-    <p>Shaping the character of Winston-Salem properties since 1968.</p>
-
-    <div class="trust">Family-owned. Professionally managed. Fully insured.</div>
-
-    <a href="#quote" class="btn">Request a Quote</a>
+    <div class="hero-logo-panel">
+      <img src="klean_image_logo.PNG" alt="Klean Image Landscaping logo">
+    </div>
 
   </div>
 </section>
@@ -282,37 +416,45 @@ footer{
 
     <div class="services">
 
-      <div class="service">
-        <div class="illustration"><img src="landscape-care.jpg"></div>
+      <article class="service">
+        <div class="illustration">
+          <img src="landscape-care.jpg" alt="Landscape care">
+        </div>
         <div class="service-copy">
           <h3>Landscape Care</h3>
           <p>Clean, consistent maintenance that keeps properties sharp and presentable.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="service">
-        <div class="illustration"><img src="stonework.jpg"></div>
+      <article class="service">
+        <div class="illustration">
+          <img src="stonework.jpg" alt="Stonework">
+        </div>
         <div class="service-copy">
           <h3>Stonework</h3>
           <p>Defined edges, walls, and features that bring structure to outdoor spaces.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="service">
-        <div class="illustration"><img src="walkways-and-paths.jpg"></div>
+      <article class="service">
+        <div class="illustration">
+          <img src="walkways-and-paths.jpg" alt="Walkways and paths">
+        </div>
         <div class="service-copy">
-          <h3>Walkways & Paths</h3>
+          <h3>Walkways &amp; Paths</h3>
           <p>Functional outdoor routes with a polished, intentional finish.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="service">
-        <div class="illustration"><img src="custom-solutions.jpg"></div>
+      <article class="service">
+        <div class="illustration">
+          <img src="custom-solutions.jpg" alt="Custom solutions">
+        </div>
         <div class="service-copy">
           <h3>Custom Solutions</h3>
           <p>Site-specific work for properties that need more than a standard service list.</p>
         </div>
-      </div>
+      </article>
 
     </div>
 
@@ -332,27 +474,33 @@ footer{
       <p>The work ranges from ongoing care to outdoor improvements that change how a property looks, functions, and feels.</p>
 
       <p>The standard is simple: do the work well, keep the property looking cared for, and build lasting relationships with the people who trust us with their space.</p>
-
-      <div class="about-logo">
-        <img src="klean_image_logo.PNG">
-      </div>
     </div>
 
   </div>
 </section>
 
 <section class="cta" id="quote">
-  <div class="container">
-    <h2>Let’s talk about your property.</h2>
-    <p>Tell us what you’re working on, what needs to change, or what needs to be maintained.</p>
-    <a href="tel:0000000000" class="btn">Request a Quote</a>
+  <div class="container cta-grid">
+
+    <div>
+      <h2>Let’s talk about your property.</h2>
+      <p>Tell us what you’re working on, what needs to change, or what needs to be maintained.</p>
+      <a href="tel:0000000000" class="btn">Request a Quote</a>
+    </div>
+
+    <div class="cta-logo">
+      <img src="klean_image_logo.PNG" alt="Klean Image Landscaping logo">
+    </div>
+
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container footer-grid">
-    <div>Klean Image Landscaping</div>
-    <div><a href="tel:0000000000">(000) 000-0000</a></div>
+    <div>Klean Image Landscaping — Winston-Salem, NC</div>
+    <div class="footer-right"><a href="tel:0000000000">(000) 000-0000</a></div>
   </div>
 </footer>
 
